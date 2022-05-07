@@ -84,7 +84,12 @@ public class ProductController {
         return "single-product";
     }
 
-
+    /**
+     * 搜索结果页
+     * @param name
+     * @param model
+     * @return
+     */
     @RequestMapping("/wishlist")
     public String wishlist(String name,Model model){
         //模糊查询

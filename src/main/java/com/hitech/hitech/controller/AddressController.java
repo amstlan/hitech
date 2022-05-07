@@ -49,11 +49,9 @@ public class AddressController {
 
     @RequestMapping("select_shop_address")
     public String selectShopAddress(HttpSession session,Model model, Long[] pid, Integer count){
-
         if (pid == null){
             return "cart";
         }
-
         //获取当前用户uid
         Long uid = (Long) session.getAttribute("uid");
 

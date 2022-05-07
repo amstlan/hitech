@@ -570,6 +570,7 @@
 									<div class="col-6 col-sm-5">
 										<button class="btn btn-outline-secondary text-uppercase" style="color: red">
 									<a th:if="${item.isbuy!=0}" th:href="@{/delete_order?sid=}+${item.sid}">确认收货</a>
+									<a th:if="${item.isbuy<1}" th:href="@{/delete_order?sid=}+${item.sid}">等待商家发货</a>
 										</button></div>
 								</div>
 							</div>

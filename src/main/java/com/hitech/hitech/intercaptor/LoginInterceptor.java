@@ -26,7 +26,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             //结束后续调用
             return false;
         }
-        //请求放行
+        //请求放行database.sql HELP.md
         return true;
     }
 

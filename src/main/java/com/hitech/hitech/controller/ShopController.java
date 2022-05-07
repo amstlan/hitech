@@ -45,6 +45,7 @@ public class ShopController {
         //获取用户的id
         Long uid = (Long) session.getAttribute("uid");
 
+        //根据查询出的用户id和传尽量的商品aid查询订单
         for (Long l : pid){
             Shop shop = new Shop();
             shop.setAid(aid);
@@ -104,6 +105,12 @@ public class ShopController {
 
             Map<String,Object> map = new HashMap<>();
 
+            if (cart == null){
+                System.out.println("cart ------------ null"
+                +"pid========"+pid
+                +"uid========="+uid);
+            }
+           // System.out.println("-----------------"+cart.getCount());
             map.put("sid", shop.getSid());
             map.put("isbuy",shop.getCount());
             map.put("count",cart.getCount());
