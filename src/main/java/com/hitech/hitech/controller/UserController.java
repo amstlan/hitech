@@ -18,9 +18,9 @@ public class UserController {
     private IUserService iUserService;
 
     /**
-     * 转跳注册页面
+     *
      * @param model 存放返回的提示信息
-     * @return
+     * @return 转跳注册页面
      */
     @RequestMapping("/registration")
     public String reghtml( Model model){
@@ -74,10 +74,11 @@ public class UserController {
     public String reg(User user, Model model){
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("first_name", user.getFirstName());
+
+        queryWrapper.eq("email", user.getEmail());
         User one = iUserService.getOne(queryWrapper);
         if (one != null){
-            model.addAttribute("msg","用户名存在");
+            model.addAttribute("msg","用户邮箱存在");
             return "registration";
         }
 
